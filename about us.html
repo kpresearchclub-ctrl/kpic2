@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KP Innovation Club</title>
+
+    <!-- Google Fonts -->
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Photo Example</title>
+
+    <style>
+       
+        .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h2{
+    font-size:24px;
+    font-weight:700;
+    color:white;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#f5f7fb;
+            color:#222;
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        /* HEADER */
+
+        header{
+            background:#0b3d91;
+            color:white;
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo i{
+            font-size:32px;
+            color:#4fc3f7;
+        }
+
+        .logo h2{
+            font-size:24px;
+            font-weight:700;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        nav ul li a{
+            color:white;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#4fc3f7;
+        }
+
+        .join-btn{
+            background:#4fc3f7;
+            color:#0b3d91;
+            padding:10px 22px;
+            border-radius:30px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .join-btn:hover{
+            background:white;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('kpic back.png');
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+        .hero-content{
+            max-width:900px;
+        }
+
+        .hero-content h1{
+            font-size:60px;
+            margin-bottom:20px;
+            font-weight:700;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:35px;
+        }
+
+        .hero-buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding:14px 32px;
+            border-radius:40px;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .primary-btn{
+            background:#4fc3f7;
+            color:#0b3d91;
+        }
+
+        .primary-btn:hover{
+            background:white;
+        }
+
+        .secondary-btn{
+            border:2px solid white;
+            color:white;
+        }
+
+        .secondary-btn:hover{
+            background:white;
+            color:#0b3d91;
+        }
+
+        /* SECTION */
+
+        section{
+            padding:90px 8%;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:60px;
+        }
+
+        .section-title h2{
+            font-size:42px;
+            color:#0b3d91;
+            margin-bottom:10px;
+        }
+
+        .section-title p{
+            color:#666;
+        }
+
+        /* ABOUT */
+
+        .about{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+            gap:50px;
+            align-items:center;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+        }
+
+        .about-text h3{
+            color:#0b3d91;
+            margin-bottom:20px;
+            font-size:32px;
+        }
+
+        .about-text p{
+            margin-bottom:20px;
+            color:#555;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .project-card{
+            background:white;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .project-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .project-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .project-content{
+            padding:25px;
+        }
+
+        .project-content h3{
+            color:#0b3d91;
+            margin-bottom:10px;
+        }
+
+        /* STATISTICS */
+
+        .stats{
+            background:#0b3d91;
+            color:white;
+        }
+
+        .stats-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:30px;
+            text-align:center;
+        }
+
+        .stat-box h2{
+            font-size:48px;
+            margin-bottom:10px;
+            color:#4fc3f7;
+        }
+
+        /* EVENTS */
+
+        .event-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:30px;
+        }
+
+        .event-card{
+            background:white;
+            border-left:6px solid #0b3d91;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .event-card h3{
+            color:#0b3d91;
+            margin-bottom:15px;
+        }
+
+        /* TEAM */
+
+        .team-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .team-card{
+            background:white;
+            text-align:center;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .team-card img{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:20px;
+        }
+
+        .team-card h3{
+            color:#0b3d91;
+        }
+
+        /* CONTACT */
+
+        .contact{
+            background:#eef4ff;
+            border-radius:25px;
+            padding:60px;
+        }
+
+        .contact-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:40px;
+        }
+
+        .contact-info h3{
+            color:#0b3d91;
+            margin-bottom:20px;
+        }
+
+        .contact-info p{
+            margin-bottom:15px;
+        }
+
+        form input,
+        form textarea{
+            width:100%;
+            padding:15px;
+            margin-bottom:20px;
+            border:none;
+            border-radius:10px;
+            outline:none;
+        }
+
+        form button{
+            background:#0b3d91;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:30px;
+            cursor:pointer;
+            font-weight:600;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#081f4d;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        footer p{
+            font-size:15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            header{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero-content h1{
+                font-size:42px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+   <a href="index.html"><img src="new designend log update.jpg" alt="KPIC Logo"></a>
+    <h2>KP Innovation Club</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="registration.html" class="join-btn">Join Club</a>
+        <a href="contact.html" class="join-btn">Sponsor Club</a>
+
+    </header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>About Our Innovation Club</h1>
+    <p><br>Building future innovators through research, creativity and technology</br></p>
+</div>
+<!-- ABOUT SECTION -->
+<section>
+
+    <div class="title">
+        <h2>Who We Are</h2>
+        <p>Passion • Innovation • Leadership</p>
+    </div>
+
+    <div class="about-container">
+
+       <img src="new designend log update.jpg" alt="KPIC Logo" height="25" width="25">
+
+        <div class="about-text">
+
+            <h3>KP Innovation Club</h3>
+
+            <p>
+                The KP Innovation Club is a student-led organization at Kibogora Polytechnic
+                focused on promoting innovation, research, entrepreneurship, and technology development and Incresing the visibility of kibogora polytechnic.
+            </p>
+
+            <p>
+                We empower students to turn ideas into real solutions that solve community challenges
+                through teamwork, creativity, and scientific thinking.
+            </p>
+
+        </div>
+
+</section>
+
+<!-- MISSION VISION -->
+<section>
+
+    <div class="title">
+        <h2>Our Purpose</h2>
+        <p>What drives our innovation journey</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3>Mission</h3>
+            <p>
+                To empower students with innovation, research, and entrepreneurship skills and Increase visibility of Kibogora polytechnic world wide.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-eye"></i>
+            <h3>Vision</h3>
+            <p>
+                To become a leading innovation hub in higher learning institutions in Rwanda.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-star"></i>
+            <h3>Values</h3>
+            <p>
+                Creativity, teamwork, discipline, integrity, and excellence.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+ <!-- KP INNOVATION CLUB LEADERSHIP SECTION -->
+
+<section class="leadership-section">
+
+    <div class="section-title">
+        <h2>KP Innovation Club Leadership</h2>
+        <p>
+            Meet the visionary leaders, mentors and innovators
+            driving research, innovation and entrepreneurship.
+        </p>
+    </div>
+
+    <!-- KP BOARD -->
+
+    <h3 class="category-title">KP Board & Mentors</h3>
+
+    <div class="leaders-grid">
+
+        <div class="leader-card">
+            <img src="twahirwa.jpeg" alt="Dr. Twahirwa Jean Claude">
+
+            <h3>Mr. TWAHIRWA Jean Claude</h3>
+
+            <p class="position">
+                Senior Mentor
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="denny 1.jpeg" alt="Mr. Ntakiyinanira Denny">
+
+            <h3>Mr. NTAKIYINANIRA Denys</h3>
+
+            <p class="position">
+                Mentor
+            </p>
+        </div>
+
+    </div>
+
+    <!-- EXECUTIVE COMMITTEE -->
+
+    <h3 class="category-title">
+        Executive Committee
+    </h3>
+
+    <div class="leaders-grid">
+
+        <div class="leader-card">
+            <img src="images patrick.jpeg" alt="UWIKUNDA Patrick">
+
+            <h3>Mr. UWIKUNDA Patrick</h3>
+
+            <p class="position">
+                Chair Person
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="nathalie 1.jpeg" alt="AKIMANA Nathalie">
+
+            <h3>Ms. AKIMANA Nathalie</h3>
+
+            <p class="position">
+                Vice Chair Person
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="love.jpeg" alt="IZIMPAMVU Love">
+
+            <h3>Mr. IZIMPAMVU Love</h3>
+
+            <p class="position">
+                Secretary
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="marcel 1.jpeg" alt="BYIRINGIRO Marcel">
+
+            <h3>Mr. UWIRINGIYIMANA Marcel</h3>
+
+            <p class="position">
+                Treasurer
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="mizero.jpeg" alt="MIZERO Isabelle">
+
+            <h3>Ms. MIZERO Isabelle</h3>
+
+            <p class="position">
+                Advisor
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="marcel.jpeg" alt="MFITEYEZU Emmanuel">
+
+            <h3>Mr. MFITEYEZU Emmanuel</h3>
+
+            <p class="position">
+                Advisor
+            </p>
+        </div>
+
+    </div>
+
+    <!-- DIRECTORS -->
+
+    <h3 class="category-title">
+        Directors
+    </h3>
+
+    <div class="leaders-grid">
+
+        <div class="leader-card">
+            <img src="felicien1.jpeg" alt="DORIHIRWE Felicien">
+
+            <h3>Mr. DORIHIRWE Felicien</h3>
+
+            <p class="position">
+                Director of Research
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="salvator.png" alt="KOMVUGA NIYOMUGENGA Salvator">
+
+            <h3>
+                Mr. KOMVUGA NIYOMUGENGA Salvator
+            </h3>
+
+            <p class="position">
+                Director of Training &
+                Capacity Building
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="felicien123.jpeg" alt="HABUHAZI Samuel">
+
+            <h3>Mr. HABUHAZI Samuel</h3>
+
+            <p class="position">
+                Director of Innovation
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="nathalie.jpeg" alt="NIYIREBA Beatha">
+
+            <h3>Ms. NIYIREBA Beatha</h3>
+
+            <p class="position">
+                Director of Entrepreneurship
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="felicien12.jpeg" alt="Community Outreach">
+
+            <h3>IRIZIHIZA Jacques Damas</h3>
+
+            <p class="position">
+                Director of Community Outreach
+            </p>
+        </div>
+
+        <div class="leader-card">
+            <img src="felicien.jpeg" alt="MUHIRWA Abraham">
+
+            <h3>Mr. MUHIRWA Abraham</h3>
+
+            <p class="position">
+                Director of Media &
+                Communication
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CSS -->
+
+<style>
+
+.leadership-section{
+    padding:90px 8%;
+    background:#f5f7fb;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:42px;
+    color:#0b3d91;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#666;
+    max-width:750px;
+    margin:auto;
+}
+
+.category-title{
+    color:#0b3d91;
+    font-size:32px;
+    margin-bottom:35px;
+    margin-top:60px;
+    text-align:center;
+}
+
+.leaders-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+.leader-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    padding-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.leader-card:hover{
+    transform:translateY(-10px);
+}
+
+.leader-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.leader-card h3{
+    color:#0b3d91;
+    margin-top:20px;
+    margin-bottom:8px;
+    padding:0 15px;
+    font-size:20px;
+}
+
+.position{
+    color:#555;
+    font-weight:500;
+    padding:0 15px;
+}
+
+@media(max-width:768px){
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .category-title{
+        font-size:26px;
+    }
+
+}
+
+</style>
+
+        </div>
+
+    </section>
+
+    
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 KP Innovation Club | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

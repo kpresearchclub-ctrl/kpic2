@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Join Club - KP Innovation Club</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#f5f7fb;
+            color:#222;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        /* HEADER */
+
+        header{
+            background:#0b3d91;
+            color:white;
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo i{
+            font-size:28px;
+            color:#4fc3f7;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav ul li a{
+            color:white;
+            font-weight:500;
+        }
+
+        nav ul li a:hover{
+            color:#4fc3f7;
+        }
+
+        /* HERO */
+
+        .hero{
+            background:linear-gradient(rgba(11,61,145,0.9), rgba(11,61,145,0.9)),
+            url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+            color:white;
+            text-align:center;
+            padding:80px 20px;
+        }
+
+        .hero h1{
+            font-size:48px;
+            margin-bottom:10px;
+        }
+
+        .hero p{
+            color:#dce9ff;
+            font-size:18px;
+        }
+
+        /* SECTION */
+
+        section{
+            padding:80px 8%;
+        }
+
+        .title{
+            text-align:center;
+            margin-bottom:50px;
+        }
+
+        .title h2{
+            font-size:38px;
+            color:#0b3d91;
+        }
+
+        .title p{
+            color:#666;
+        }
+
+        /* MEMBERSHIP CONTAINER */
+
+        .membership-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+            gap:40px;
+        }
+
+        /* BENEFITS */
+
+        .benefits{
+            background:white;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .benefits h3{
+            color:#0b3d91;
+            margin-bottom:20px;
+        }
+
+        .benefit-item{
+            display:flex;
+            gap:15px;
+            margin-bottom:20px;
+            align-items:flex-start;
+        }
+
+        .benefit-item i{
+            color:#0b3d91;
+            font-size:22px;
+            margin-top:3px;
+        }
+
+        /* FORM */
+
+        .membership-form{
+            background:white;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .membership-form h3{
+            color:#0b3d91;
+            margin-bottom:20px;
+        }
+
+        .membership-form input,
+        .membership-form select,
+        .membership-form textarea{
+            width:100%;
+            padding:15px;
+            margin-bottom:20px;
+            border:none;
+            background:#f1f5ff;
+            border-radius:10px;
+            outline:none;
+        }
+
+        .membership-form button{
+            background:#0b3d91;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:30px;
+            cursor:pointer;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .membership-form button:hover{
+            background:#4fc3f7;
+            color:#0b3d91;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#081f4d;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:32px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h2>KP Innovation Club</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="registration.html" class="join-btn">Join Club</a>
+        <a href="contact.html" class="join-btn">Sponsor Club</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Join KP Innovation Club</h1>
+    <p>Become part of a community of innovators, researchers and future entrepreneurs</p>
+</div>
+
+<!-- MEMBERSHIP SECTION -->
+<section>
+
+    <div class="title">
+        <h2>Membership Registration</h2>
+        <p>Start your innovation journey with us today</p>
+    </div>
+
+    <div class="membership-container">
+
+        <!-- BENEFITS -->
+
+        <div class="benefits">
+
+            <h3>Why Join Us?</h3>
+
+            <div class="benefit-item">
+                <i class="fa-solid fa-lightbulb"></i>
+                <div>
+                    <h4>Innovation Skills</h4>
+                    <p>Develop creativity, research and problem-solving skills.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h4>Networking</h4>
+                    <p>Connect with students, mentors, researchers and innovators.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <i class="fa-solid fa-flask"></i>
+                <div>
+                    <h4>Research Opportunities</h4>
+                    <p>Participate in research projects and innovation competitions.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <div>
+                    <h4>Entrepreneurship</h4>
+                    <p>Learn startup development and business innovation skills.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <div class="membership-form">
+
+            <h3>Register Now</h3>
+
+            <form>
+
+                <input type="text" placeholder="Full Name" required>
+
+                <input type="email" placeholder="Email Address" required>
+
+                <input type="tel" placeholder="Phone Number" required>
+
+                <input type="text" placeholder=" Faculty" required>
+                <input type="text" placeholder=" Department" required>
+                <input type="text" placeholder="Registration Number" required>
+
+                <select required>
+                    <option value="">Select Academic Year</option>
+                    <option>Year 1</option>
+                    <option>Year 2</option>
+                    <option>Year 3</option>
+                    <option>Year 4</option>
+                </select>
+
+                <textarea rows="5"
+                placeholder="Why do you want to join the club?"></textarea>
+
+                <button type="submit">
+                    Join Innovation Club
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 KP Innovation Club | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

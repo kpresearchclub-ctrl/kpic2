@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KP Innovation Club</title>
+
+    <!-- Google Fonts -->
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Photo Example</title>
+
+    <style>
+       
+        .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h2{
+    font-size:24px;
+    font-weight:700;
+    color:white;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#f5f7fb;
+            color:#222;
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        /* HEADER */
+
+        header{
+            background:#0b3d91;
+            color:white;
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo i{
+            font-size:32px;
+            color:#4fc3f7;
+        }
+
+        .logo h2{
+            font-size:24px;
+            font-weight:700;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        nav ul li a{
+            color:white;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#4fc3f7;
+        }
+
+        .join-btn{
+            background:#4fc3f7;
+            color:#0b3d91;
+            padding:10px 22px;
+            border-radius:30px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .join-btn:hover{
+            background:white;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('kpic back.png');
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+        .hero-content{
+            max-width:900px;
+        }
+
+        .hero-content h1{
+            font-size:60px;
+            margin-bottom:20px;
+            font-weight:700;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:35px;
+        }
+
+        .hero-buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding:14px 32px;
+            border-radius:40px;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .primary-btn{
+            background:#4fc3f7;
+            color:#0b3d91;
+        }
+
+        .primary-btn:hover{
+            background:white;
+        }
+
+        .secondary-btn{
+            border:2px solid white;
+            color:white;
+        }
+
+        .secondary-btn:hover{
+            background:white;
+            color:#0b3d91;
+        }
+
+        /* SECTION */
+
+        section{
+            padding:90px 8%;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:60px;
+        }
+
+        .section-title h2{
+            font-size:42px;
+            color:#0b3d91;
+            margin-bottom:10px;
+        }
+
+        .section-title p{
+            color:#666;
+        }
+
+        /* ABOUT */
+
+        .about{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+            gap:50px;
+            align-items:center;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+        }
+
+        .about-text h3{
+            color:#0b3d91;
+            margin-bottom:20px;
+            font-size:32px;
+        }
+
+        .about-text p{
+            margin-bottom:20px;
+            color:#555;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .project-card{
+            background:white;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .project-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .project-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .project-content{
+            padding:25px;
+        }
+
+        .project-content h3{
+            color:#0b3d91;
+            margin-bottom:10px;
+        }
+
+        /* STATISTICS */
+
+        .stats{
+            background:#0b3d91;
+            color:white;
+        }
+
+        .stats-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:30px;
+            text-align:center;
+        }
+
+        .stat-box h2{
+            font-size:48px;
+            margin-bottom:10px;
+            color:#4fc3f7;
+        }
+
+        /* EVENTS */
+
+        .event-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:30px;
+        }
+
+        .event-card{
+            background:white;
+            border-left:6px solid #0b3d91;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .event-card h3{
+            color:#0b3d91;
+            margin-bottom:15px;
+        }
+
+        /* TEAM */
+
+        .team-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .team-card{
+            background:white;
+            text-align:center;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .team-card img{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:20px;
+        }
+
+        .team-card h3{
+            color:#0b3d91;
+        }
+
+        /* CONTACT */
+
+        .contact{
+            background:#eef4ff;
+            border-radius:25px;
+            padding:60px;
+        }
+
+        .contact-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:40px;
+        }
+
+        .contact-info h3{
+            color:#0b3d91;
+            margin-bottom:20px;
+        }
+
+        .contact-info p{
+            margin-bottom:15px;
+        }
+
+        form input,
+        form textarea{
+            width:100%;
+            padding:15px;
+            margin-bottom:20px;
+            border:none;
+            border-radius:10px;
+            outline:none;
+        }
+
+        form button{
+            background:#0b3d91;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:30px;
+            cursor:pointer;
+            font-weight:600;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#081f4d;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        footer p{
+            font-size:15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            header{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero-content h1{
+                font-size:42px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+     <a href="index.html"><img src="new designend log update.jpg" alt="KPIC Logo"></a>
+    <h2>KP Innovation Club</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="registration.html" class="join-btn">Join Club</a>
+        <a href="contact.html" class="join-btn">Sponsor Club</a>
+
+    </header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Our Innovation Projects</h1>
+    <p>Showcasing student creativity, research, and technology solutions</p>
+</div>
+
+<!-- PROJECT SECTION -->
+<section>
+
+    <div class="title">
+        <h2>Featured Projects</h2>
+        <p>Real solutions developed by KP Innovation Club members</p>
+    </div>
+
+    <!-- PROJECTS -->
+
+    <section>
+
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <p>Innovative ideas developed by our members</p>
+        </div>
+
+        <div class="projects-grid">
+             
+            <div class="project-card">
+
+                <img src="pig farming.png">
+
+                <div class="project-content">
+                    <span class="tag">Nutrition and Food Security</span>
+                    <h3><li><a href="Project.html">Smart Agriculture</a></li></h3>
+                    
+                    <p>
+                       This is a proposed technology-driven farming project designed for individuals, investors, organizations, and partners interested in sustainable agriculture and agribusiness opportunities.
+
+The project will focus on pig farming, poultry farming, and crop production, with plans to add value through products such as protein-rich fortified flour, sausages, bacon, egg powder, and processed chicken meat.
+
+We are currently seeking interested partners, investors, and supporters who would like to participate in developing and establishing this innovative agricultural project. Our vision is to build a sustainable agribusiness that improves productivity, creates employment, supports food security, and generates value from locally produced agricultural products.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="project-card">
+                 
+
+                <img src="umubyeyi.png">
+
+                <div class="project-content">
+                      <span class="tag">Health and Nutrition</span>
+                    <h3><li><a href="Project.html">Umubyeyi Health and Nutrition Hub</a></li></h3>
+                  
+                    <p>
+                        Umubyeyi Health & Nutrition Hub is a research- and technology-driven initiative dedicated to improving the health and well-being of women and children. It focuses on women’s health from menarche to menopause, pregnancy and maternal care, gynecological health monitoring, child growth and development, and innovative nutrition solutions to prevent malnutrition and stunting. We welcome passionate health professionals, researchers, nutritionists, technologists, innovators, and dedicated staff members who want to contribute their skills and expertise.
+
+We are currently calling for partnerships and seeking investors, organizations, institutions, and supporters interested in advancing innovative healthcare, nutrition, research, and technology solutions. Through collaboration and investment, we aim to develop practical health technologies, strengthen nutrition production, expand research, create opportunities for talented professionals, and build sustainable solutions for healthy women, healthy children, and a healthy nation.
+
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="project-card">
+                 
+
+                <img src="lms.png">
+
+                <div class="project-content">
+                      <span class="tag">Technology</span>
+                    <h3><li><a href="Project.html">laboratory management system</a></li></h3>
+                  
+                    <p>
+                        Exploring artificial intelligence, automation,
+                        and smart systems for tracking the student attendence eligibilty in OSCE and Inventory management. Laboratory Management System
+
+The Laboratory Management System is a technology-driven platform exploring artificial intelligence, automation, and smart digital systems to improve the management of laboratory activities. The system is designed to support efficient tracking, organization, and monitoring of laboratory resources and student participation.
+
+It focuses on student attendance and OSCE eligibility tracking, as well as laboratory inventory management, helping staff maintain accurate records, monitor available resources, reduce administrative workload, and improve efficiency. The project welcomes technology partners, developers, researchers, institutions, and investors interested in advancing smart solutions for education and laboratory management.
+
+                    </p>
+                </div>
+
+            </div>
+            <div class="project-card">
+
+            <img src="replast.png">
+
+            <div class="content">
+                <span class="tag">Environment</span>
+                <h3><li><a href="project.html">Replast project</a></li></h3>
+                <p>
+                    Replast Project
+
+Replast is a smart waste collection and recycling project designed to improve environmental cleanliness while turning plastic waste into valuable construction materials. Through smart collection, sorting, processing, and recycling, collected plastic will be transformed into durable pavers and building blocks that can be used in housing and infrastructure development.
+
+The project promotes clean communities, sustainable recycling, job creation, and affordable building solutions while reducing plastic pollution. We are calling for investors, partners, organizations, innovators, and community members to join us in transforming waste into opportunity and building a cleaner, greener, and more sustainable nation.
+
+                </p>
+            </div>
+
+        </div>
+        <div class="project-card">
+
+            <img src="maternal.png">
+
+            <div class="content">
+                <span class="tag">Health</span>
+                <h3><li><a href="project.html">Smart maternal kit</a></li></h3>
+                <p>
+                   Smart Maternal Kit
+
+Smart Maternal Kit is an innovative maternal health project designed to improve birth preparedness and support mothers throughout pregnancy, delivery, and the postnatal period. The project helps mothers understand and prepare the essential items needed for themselves and their newborns, while providing practical guidance for antenatal care, delivery preparation, and post-delivery needs.
+
+The project also aims to improve antenatal care attendance and follow-up through reminders, educational information, and organized maternal health support. We welcome healthcare professionals, researchers, technology developers, investors, organizations, and partners to collaborate with us in developing a smart, accessible solution that promotes safer motherhood and healthier newborns.
+
+                </p>
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+        
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 KP Innovation Club | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KP Innovation Club | Blog</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f4f8ff;
+      color:#222;
+      line-height:1.7;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 8%;
+      background:#0d47a1;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .logo{
+      color:white;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .logo span{
+      color:#64b5f6;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active{
+      color:#90caf9;
+    }
+
+    .hero{
+      min-height:50vh;
+      background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop') center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:40px;
+    }
+
+    .hero h1{
+      font-size:56px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      max-width:750px;
+      margin:auto;
+      font-size:18px;
+    }
+
+    .section{
+      padding:90px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      color:#0d47a1;
+      margin-bottom:10px;
+    }
+
+    .blog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .blog-card{
+      background:white;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.4s ease;
+    }
+
+    .blog-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .blog-card img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+    }
+
+    .blog-content{
+      padding:28px;
+    }
+
+    .date{
+      color:#0d47a1;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+
+    .blog-content h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .blog-content p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 24px;
+      border-radius:50px;
+      background:#0d47a1;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      background:#1565c0;
+    }
+
+    .featured{
+      margin-top:100px;
+      background:white;
+      border-radius:30px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .featured img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .featured-content{
+      padding:50px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .featured-content span{
+      color:#0d47a1;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .featured-content h2{
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .newsletter{
+      margin-top:100px;
+      background:linear-gradient(135deg,#0d47a1,#1565c0);
+      color:white;
+      border-radius:30px;
+      padding:70px 8%;
+      text-align:center;
+    }
+
+    .newsletter h2{
+      font-size:40px;
+      margin-bottom:15px;
+    }
+
+    .newsletter form{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      margin-top:30px;
+      flex-wrap:wrap;
+    }
+
+    .newsletter input{
+      width:350px;
+      max-width:100%;
+      padding:16px;
+      border:none;
+      border-radius:50px;
+      outline:none;
+    }
+
+    .newsletter button{
+      padding:16px 28px;
+      border:none;
+      border-radius:50px;
+      background:white;
+      color:#0d47a1;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      margin-top:90px;
+      background:#07172f;
+      color:white;
+      padding:60px 8% 20px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+      margin-bottom:30px;
+    }
+
+    .footer-grid h3{
+      color:#90caf9;
+      margin-bottom:15px;
+    }
+
+    .footer-grid a,
+    .footer-grid p{
+      color:#ddd;
+      text-decoration:none;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .socials{
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .socials a{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:#0d47a1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+    }
+
+    .copy{
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:20px;
+      color:#ccc;
+    }
+
+    @media(max-width:768px){
+      .navbar{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .section-title h2,
+      .newsletter h2,
+      .featured-content h2{
+        font-size:30px;
+      }
+    }
+  
+
+    /* ADMIN ARTICLE FORM */
+        .admin-login{
+      background:white;
+      padding:40px;
+      border-radius:30px;
+      margin-bottom:40px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .admin-login h2{
+      color:#0d47a1;
+      margin-bottom:10px;
+      font-size:34px;
+    }
+
+    .admin-login p{
+      color:#666;
+      margin-bottom:25px;
+    }
+
+    .login-box{
+      max-width:500px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .login-box input{
+      width:100%;
+      padding:16px;
+      border:1px solid #dbe4ff;
+      border-radius:14px;
+      outline:none;
+      font-size:16px;
+    }
+
+    .login-box button{
+      padding:16px;
+      border:none;
+      border-radius:50px;
+      background:#0d47a1;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .login-box button:hover{
+      background:#1565c0;
+    }
+
+    .admin-panel{
+      background:white;
+      padding:40px;
+      border-radius:30px;
+      margin-bottom:70px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .admin-panel h2{
+      color:#0d47a1;
+      margin-bottom:10px;
+      font-size:34px;
+    }
+
+    .admin-panel p{
+      color:#666;
+      margin-bottom:25px;
+    }
+
+    .article-form{
+      display:grid;
+      gap:20px;
+    }
+
+    .article-form input,
+    .article-form textarea{
+      min-height:220px;
+      resize:vertical;
+      background:#f8fbff;
+      border:2px solid #dbe4ff;
+      font-size:17px;
+      line-height:1.8;
+      padding:20px;
+    }
+
+    .editor-tools{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    .tool-btn{
+      border:none;
+      background:#e8f0ff;
+      color:#0d47a1;
+      padding:12px 16px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .tool-btn:hover{
+      background:#0d47a1;
+      color:white;
+    }
+
+    .attachment-box{
+      background:#f8fbff;
+      border:2px dashed #b7cbff;
+      padding:20px;
+      border-radius:18px;
+    }
+
+    .attachment-preview{
+      margin-top:15px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .attachment-preview img{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:16px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .file-tag{
+      background:#0d47a1;
+      color:white;
+      padding:10px 16px;
+      border-radius:50px;
+      font-size:14px;
+    }
+
+    .article-form button{
+      width:220px;
+      padding:16px;
+      border:none;
+      border-radius:50px;
+      background:#0d47a1;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .article-form button:hover{
+      background:#1565c0;
+    }
+
+    .success-message{
+      margin-top:15px;
+      color:green;
+      font-weight:600;
+    }
+
+    .category-badge{
+      display:inline-block;
+      padding:8px 16px;
+      border-radius:50px;
+      background:#e3f2fd;
+      color:#0d47a1;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+
+    .article-preview-text{
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+
+    .full-article-modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.75);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      padding:30px;
+      z-index:10000;
+    }
+
+    .modal-content{
+      background:white;
+      width:100%;
+      max-width:900px;
+      max-height:90vh;
+      overflow-y:auto;
+      border-radius:30px;
+      padding:40px;
+      position:relative;
+    }
+
+    .modal-content img{
+      width:100%;
+      border-radius:20px;
+      margin-bottom:25px;
+      max-height:400px;
+      object-fit:cover;
+    }
+
+    .close-modal{
+      position:absolute;
+      top:20px;
+      right:20px;
+      background:#d32f2f;
+      color:white;
+      border:none;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    .minimized-chat{
+      height:70px !important;
+      overflow:hidden;
+    }
+
+    .chat-toggle{
+      margin-left:auto;
+      background:white;
+      color:#0d47a1;
+      border:none;
+      width:35px;
+      height:35px;
+      border-radius:50%;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .ai-chat-box{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:340px;
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 35px rgba(0,0,0,0.15);
+      z-index:9999;
+    }
+
+    .ai-chat-header{
+      background:#0d47a1;
+      color:white;
+      padding:18px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .ai-chat-messages{
+      height:280px;
+      overflow-y:auto;
+      padding:20px;
+      background:#f8fbff;
+    }
+
+    .chat-message{
+      margin-bottom:15px;
+      padding:12px 16px;
+      border-radius:18px;
+      max-width:90%;
+      font-size:14px;
+    }
+
+    .bot{
+      background:#e3f2fd;
+      color:#0d47a1;
+    }
+
+    .user{
+      background:#0d47a1;
+      color:white;
+      margin-left:auto;
+    }
+
+    .ai-chat-input{
+      display:flex;
+      border-top:1px solid #eee;
+    }
+
+    .ai-chat-input input{
+      flex:1;
+      border:none;
+      padding:16px;
+      outline:none;
+    }
+
+    .ai-chat-input button{
+      border:none;
+      background:#0d47a1;
+      color:white;
+      padding:0 20px;
+      cursor:pointer;
+    }
+</style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">KP <span>Innovation</span></div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#" class="active">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>News & Articles</h1>
+      <p>
+        Explore innovation stories, student achievements, research updates,
+        entrepreneurship ideas, and community impact from KP Innovation Club.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+
+    <!-- ADMIN LOGIN -->
+    <div class="admin-login" id="adminLogin">
+
+      <h2>Admin Portal</h2>
+
+      <p>
+        Only authorized KP Innovation Club administrators with approved email access can publish news and articles.
+      </p>
+
+      <div class="login-box">
+        <input type="email" id="adminEmailInput" placeholder="Enter admin email">
+
+        <input type="password" id="adminPasswordInput" placeholder="Enter admin password">
+
+        <button onclick="loginAdmin()">Admin Login</button>
+
+        <div id="loginMessage" style="margin-top:15px;font-weight:600;"></div>
+      </div>
+
+    </div>
+
+    <div class="admin-panel" id="adminPanel" style="display:none;">
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+        <h2>Admin Article Publisher</h2>
+
+        <button onclick="logoutAdmin()" style="padding:12px 24px;border:none;border-radius:50px;background:#d32f2f;color:white;font-weight:600;cursor:pointer;">
+          Logout
+        </button>
+      </div>
+
+      <p>
+        Authorized administrators can publish professional news, announcements, research updates, and innovation articles directly to the website.
+      </p>
+
+      <form class="article-form" id="articleForm">
+
+        <input type="text" id="articleTitle" placeholder="Enter article title" required>
+
+        <input type="text" id="articleDate" placeholder="Enter article date (Example: June 2026)" required>
+
+        <select id="publishCategory" style="padding:18px;border-radius:16px;border:2px solid #dbe4ff;background:#f8fbff;font-size:16px;">
+          <option value="News">📰 News</option>
+          <option value="Projects">🚀 Projects</option>
+          <option value="Events">🎉 Events</option>
+          <option value="Gallery">🖼️ Gallery</option>
+        </select>
+
+        <div class="attachment-box">
+
+          <div class="editor-tools">
+            <button type="button" class="tool-btn" onclick="addEmoji('😀')">😀 Emoji</button>
+            <button type="button" class="tool-btn" onclick="addEmoji('🔥')">🔥 Trending</button>
+            <button type="button" class="tool-btn" onclick="addEmoji('🚀')">🚀 Innovation</button>
+            <button type="button" class="tool-btn" onclick="addEmoji('🎓')">🎓 Education</button>
+          </div>
+
+          <input type="file" id="articleImage" accept="image/*" multiple>
+
+          <input type="file" id="articleFile" multiple>
+
+          <small style="color:#666;display:block;margin-top:10px;">
+            Upload images, PDF files, documents, posters, or article attachments directly from your computer or phone.
+          </small>
+
+          <div class="attachment-preview" id="attachmentPreview"></div>
+
+        </div>
+
+        <textarea id="articleDescription" placeholder="Write detailed article description with emojis, news content, announcements, achievements, research information, or innovation updates..." required></textarea>
+
+        <button type="submit">Publish Article</button>
+
+        <div class="success-message" id="successMessage"></div>
+
+      </form>
+
+    </div>
+
+    <div class="section-title">
+      <h2>Latest Articles</h2>
+      <p>Professional insights and innovation updates from KP students and leaders.</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="blog-content">
+          <div class="category-badge">${category}</div>
+
+        <div class="date"><i class="fa-solid fa-calendar"></i> May 2026</div>
+
+          <h3>Research & Innovation in Health Sciences</h3>
+
+          <p>
+            Students are advancing digital healthcare solutions and scientific research.
+          </p>
+
+          <button class="btn" onclick="openArticlePage(this)"
+          data-title="${title}"
+          data-date="${date}"
+          data-image="${image}"
+          data-description="${description.replace(/"/g,'&quot;')}"
+        >Read More</button>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="blog-content">
+          <div class="date"><i class="fa-solid fa-calendar"></i> April 2026</div>
+
+          <h3>Technology & Entrepreneurship Training</h3>
+
+          <p>
+            Innovation workshops empowered students with leadership and startup skills.
+          </p>
+
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1522202222206-b7501de8b9e9?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="blog-content">
+          <div class="date"><i class="fa-solid fa-calendar"></i> March 2026</div>
+
+          <h3>Community Impact Projects</h3>
+
+          <p>
+            KP students are solving real-world challenges through innovation and teamwork.
+          </p>
+
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="featured">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="">
+
+      <div class="featured-content">
+        <span>Featured Article</span>
+
+        <h2>How Innovation Clubs Empower University Students</h2>
+
+        <p>
+          Through mentorship, leadership, collaboration, and entrepreneurship,
+          students transform ideas into impactful community solutions.
+        </p>
+
+        <a href="#" class="btn">Explore Article</a>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <h2>Subscribe for Updates</h2>
+
+      <p>
+        Stay updated with innovation events, student achievements, and research opportunities.
+      </p>
+
+      <form>
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- AI CHAT ASSISTANT -->
+  <div class="ai-chat-box">
+
+    <div class="ai-chat-header">
+      🤖 KP AI Assistant
+
+      <button class="chat-toggle" onclick="toggleChat()">−</button>
+    </div>
+
+    <div class="ai-chat-messages" id="chatMessages">
+
+      <div class="chat-message bot">
+        Hello 👋 Welcome to KP Innovation Club. Ask me about projects, events, leadership, innovation, or research.
+      </div>
+
+    </div>
+
+    <div class="ai-chat-input">
+      <input type="text" id="chatInput" placeholder="Ask KP AI assistant...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+  </div>
+
+  <!-- FULL ARTICLE MODAL -->
+  <div class="full-article-modal" id="articleModal">
+
+    <div class="modal-content" id="modalContent">
+      <button class="close-modal" onclick="closeArticle()">×</button>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+
+      <div>
+        <h3>KP Innovation Club</h3>
+        <p>Empowering students through innovation, leadership, and technology.</p>
+
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Blog</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-location-dot"></i> Kibogora Polytechnic</p>
+        <p><i class="fa-solid fa-envelope"></i> info@kpinnovationclub.com</p>
+        <p><i class="fa-solid fa-phone"></i> +250 7XX XXX XXX</p>
+      </div>
+
+    </div>
+
+    <div class="copy">
+      © 2026 KP Innovation Club. All Rights Reserved.
+    </div>
+  </footer>
+
+
+<script>
+
+// SECURE ADMIN LOGIN SYSTEM
+const adminEmail = 'studentresearchclubkibogorapol@gmail.com';
+const adminPassword = 'KP2026Admin';
+
+function loginAdmin(){
+
+  const enteredEmail = document.getElementById('adminEmailInput').value;
+  const enteredPassword = document.getElementById('adminPasswordInput').value;
+  const loginMessage = document.getElementById('loginMessage');
+
+  if(enteredEmail === adminEmail && enteredPassword === adminPassword){
+
+    document.getElementById('adminPanel').style.display = 'block';
+    document.getElementById('adminLogin').style.display = 'none';
+
+  }else{
+
+    loginMessage.innerHTML = '❌ Access Denied! Invalid admin email or password.';
+    loginMessage.style.color = 'red';
+
+  }
+}
+
+
+function logoutAdmin(){
+
+  document.getElementById('adminPanel').style.display = 'none';
+  document.getElementById('adminLogin').style.display = 'block';
+
+  document.getElementById('adminEmailInput').value = '';
+  document.getElementById('adminPasswordInput').value = '';
+
+  alert('Admin logged out successfully!');
+}
+
+const articleForm = document.getElementById('articleForm');
+const blogGrid = document.getElementById('blogGrid');
+const successMessage = document.getElementById('successMessage');
+const attachmentPreview = document.getElementById('attachmentPreview');
+
+// SAVE ARTICLES IN LOCAL STORAGE
+window.onload = function(){
+
+  const savedArticles = localStorage.getItem('kpArticles');
+
+  if(savedArticles){
+    blogGrid.innerHTML = savedArticles + blogGrid.innerHTML;
+  }
+}
+
+// EMOJI FUNCTION
+function addEmoji(emoji){
+
+  const textarea = document.getElementById('articleDescription');
+  textarea.value += ' ' + emoji;
+  textarea.focus();
+}
+
+// ATTACHMENT PREVIEW
+
+document.getElementById('articleImage').addEventListener('change', function(){
+
+  attachmentPreview.innerHTML = '';
+
+  Array.from(this.files).forEach(file => {
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      attachmentPreview.appendChild(img);
+    }
+
+    reader.readAsDataURL(file);
+  });
+});
+
+document.getElementById('articleFile').addEventListener('change', function(){
+
+  Array.from(this.files).forEach(file => {
+
+    const fileTag = document.createElement('div');
+    fileTag.classList.add('file-tag');
+    fileTag.innerHTML = '📄 ' + file.name;
+
+    attachmentPreview.appendChild(fileTag);
+  });
+});
+
+articleForm.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const title = document.getElementById('articleTitle').value;
+  const date = document.getElementById('articleDate').value;
+  const imageFile = document.getElementById('articleImage').files[0];
+  const files = document.getElementById('articleFile').files;
+  const description = document.getElementById('articleDescription').value;
+  const category = document.getElementById('publishCategory').value;
+
+  const articleCard = document.createElement('div');
+  articleCard.classList.add('blog-card');
+
+  const reader = new FileReader();
+
+  reader.onload = function(event){
+
+    const image = event.target.result;
+
+    // build file downloads UI
+    let filesHTML = '';
+
+    Array.from(files).forEach(file => {
+      const fileURL = URL.createObjectURL(file);
+      filesHTML += `
+        <div style="margin-top:10px;">
+          📄 <a href="${fileURL}" download="${file.name}" style="color:#0d47a1;font-weight:600;">
+            Download ${file.name}
+          </a>
+        </div>
+      `;
+    });
+
+    articleCard.innerHTML = `
+
+      <img src="${image}" alt="Article Image">
+
+      <div class="blog-content">
+        <div class="date">
+          <i class="fa-solid fa-calendar"></i> ${date}
+        </div>
+
+        <h3>${title}</h3>
+
+        <p class="article-preview-text">${description}</p>
+
+        ${filesHTML}
+
+        <a href="#" class="btn">Read More</a>
+      </div>
+    `;
+
+    blogGrid.prepend(articleCard);
+
+    // SAVE ARTICLES PERMANENTLY
+    localStorage.setItem('kpArticles', blogGrid.innerHTML);
+
+    successMessage.innerHTML = '✅ Article published successfully!';
+
+    articleForm.reset();
+
+    setTimeout(() => {
+      successMessage.innerHTML = '';
+    }, 3000);
+
+  };
+
+  reader.readAsDataURL(imageFile);
+});
+
+// SIMPLE AI CHAT SYSTEM
+// OPEN ARTICLE AS SEPARATE PAGE
+function openArticlePage(button){
+
+  const title = button.getAttribute('data-title');
+  const date = button.getAttribute('data-date');
+  const image = button.getAttribute('data-image');
+  const description = button.getAttribute('data-description');
+
+  // SAVE ARTICLE DATA
+  localStorage.setItem('selectedArticle', JSON.stringify({
+    title,
+    date,
+    image,
+    description
+  }));
+
+  // OPEN ARTICLE PAGE
+  window.location.href = 'article.html';
+}
+
+// LOAD ARTICLE PAGE
+if(window.location.pathname.includes('article.html')){
+
+  const articleData = JSON.parse(localStorage.getItem('selectedArticle'));
+
+  if(articleData){
+
+    document.body.innerHTML = `
+
+      <div style="min-height:100vh;background:#f4f8ff;padding:50px 8%;font-family:Poppins,sans-serif;">
+
+        <a href="blog.html" style="display:inline-block;margin-bottom:30px;padding:12px 24px;background:#0d47a1;color:white;text-decoration:none;border-radius:50px;">
+          ← Back to Articles
+        </a>
+
+        <div style="background:white;border-radius:30px;padding:40px;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+
+          <img src="${articleData.image}" style="width:100%;max-height:450px;object-fit:cover;border-radius:20px;margin-bottom:30px;">
+
+          <div style="color:#0d47a1;font-weight:600;margin-bottom:20px;">
+            <i class="fa-solid fa-calendar"></i> ${articleData.date}
+          </div>
+
+          <h1 style="font-size:45px;color:#0d47a1;margin-bottom:25px;line-height:1.3;">
+            ${articleData.title}
+          </h1>
+
+          <div style="line-height:2;font-size:18px;color:#444;">
+            ${articleData.description}
+          </div>
+
+        </div>
+
+      </div>
+    `;
+  }
+}
+
+// MINIMIZE AI CHAT
+function toggleChat(){
+
+  const chatBox = document.querySelector('.ai-chat-box');
+  const btn = document.querySelector('.chat-toggle');
+
+  chatBox.classList.toggle('minimized-chat');
+
+  if(chatBox.classList.contains('minimized-chat')){
+    btn.innerHTML = '+';
+  }else{
+    btn.innerHTML = '−';
+  }
+}
+
+function sendMessage(){
+
+  const input = document.getElementById('chatInput');
+  const messages = document.getElementById('chatMessages');
+
+  const userMessage = input.value.trim();
+
+  if(userMessage === '') return;
+
+  messages.innerHTML += `
+    <div class="chat-message user">
+      ${userMessage}
+    </div>
+  `;
+
+  let botReply = 'Thank you for contacting KP Innovation Club.';
+
+  const text = userMessage.toLowerCase();
+
+  if(text.includes('project')){
+    botReply = '🚀 KP Innovation Club develops student innovation, entrepreneurship, technology, and health science projects.';
+  }
+  else if(text.includes('event')){
+    botReply = '🎉 KP Innovation Club organizes innovation competitions, training, workshops, and community events.';
+  }
+  else if(text.includes('research')){
+    botReply = '🔬 KP supports scientific research, healthcare innovation, and student-led academic projects.';
+  }
+  else if(text.includes('leader')){
+    botReply = '👨‍💼 KP Innovation Club leadership includes mentors, executive committee members, and directors.';
+  }
+  else if(text.includes('contact')){
+    botReply = '📧 Contact KP Innovation Club through studentresearchclubkibogorapol@gmail.com';
+  }
+
+  setTimeout(() => {
+
+    messages.innerHTML += `
+      <div class="chat-message bot">
+        ${botReply}
+      </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
+
+  }, 700);
+
+  input.value = '';
+}
+
+</script>
+
+</body>
+</html>

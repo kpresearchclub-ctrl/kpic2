@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KP Innovation Club Certificate</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<style>
+
+body{
+    background:#f4f7fb;
+    font-family:Arial, sans-serif;
+    padding:20px;
+}
+
+.form{
+    width:400px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0056b3;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#003d80;
+}
+
+/* CERTIFICATE */
+
+.certificate{
+    width:1100px;
+    min-height:750px;
+    margin:auto;
+    background:white;
+    border:12px solid #0056b3;
+    padding:40px;
+    text-align:center;
+    position:relative;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+.club-name{
+    color:#0056b3;
+    font-size:28px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.title{
+    font-size:42px;
+    color:#0056b3;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.subtitle{
+    font-size:20px;
+    margin-top:15px;
+}
+
+.student-name{
+    font-size:42px;
+    font-weight:bold;
+    color:#000;
+    margin:25px 0;
+    text-transform:uppercase;
+}
+
+.text{
+    font-size:22px;
+    line-height:1.8;
+    max-width:900px;
+    margin:auto;
+}
+
+.details{
+    margin-top:25px;
+    font-size:20px;
+}
+
+.qr-section{
+    margin-top:20px;
+}
+
+#certQR{
+    width:120px;
+    margin:auto;
+}
+
+.signatures{
+    display:flex;
+    justify-content:space-between;
+    margin-top:80px;
+    padding:0 80px;
+}
+
+.sign-box{
+    text-align:center;
+    font-size:18px;
+}
+
+.line{
+    width:250px;
+    border-top:2px solid black;
+    margin-bottom:10px;
+}
+
+.footer{
+    margin-top:30px;
+    color:#0056b3;
+    font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="form">
+
+<h2>Certificate Generator</h2>
+
+<input type="text" id="name" placeholder="Student Name">
+
+<select id="position">
+<option>Member</option>
+<option>Club President</option>
+<option>Vice President</option>
+<option>Director of Innovation</option>
+<option>Director of Research</option>
+<option>Director of Entrepreneurship</option>
+<option>Secretary General</option>
+<option>Treasurer</option>
+</select>
+
+<input type="text" id="membershipId" placeholder="Membership ID">
+
+<input type="text" id="batch" placeholder="Batch Number">
+
+<button onclick="generateCertificate()">
+Generate Certificate
+</button>
+
+<br><br>
+
+<button onclick="downloadCertificate()">
+📥 Download Certificate
+</button>
+
+</div>
+
+<!-- CERTIFICATE -->
+
+<div class="certificate" id="certificate">
+
+<img src="new designend log update.jpg" class="logo">
+
+<div class="club-name">
+KIBOGORA POLYTECHNIC<br>
+INNOVATION CLUB
+</div>
+
+<div class="title">
+CERTIFICATE OF RECOGNITION
+</div>
+
+<div class="subtitle">
+This Certificate is Proudly Presented To
+</div>
+
+<div class="student-name" id="certName">
+STUDENT NAME
+</div>
+
+<div class="text">
+
+In recognition of outstanding participation, commitment, innovation, leadership, and valuable contribution to the
+Kibogora Polytechnic Innovation Club throughout the period of study at Kibogora Polytechnic.
+
+The Club sincerely appreciates the dedication and service rendered in promoting innovation, research, entrepreneurship, technology, and community development.
+
+</div>
+
+<div class="details">
+
+<strong>Position:</strong>
+<span id="certPosition">---</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<strong>Membership ID:</strong>
+<span id="certId">---</span>
+
+<br><br>
+
+<strong>Batch Number:</strong>
+<span id="certBatch">---</span>
+
+<br><br>
+
+<strong>Date Issued:</strong>
+<span id="certDate"></span>
+
+</div>
+
+<div class="qr-section">
+<div id="certQR"></div>
+</div>
+
+<div class="signatures">
+
+<div class="sign-box">
+<div class="line"></div>
+KPIC President 
+<div>UWIKUNDA Patrick</div>
+</div>
+
+<div class="sign-box">
+<div class="line"></div>
+Mentor 
+<div>TWAHIRWA Jean Claude</div>
+</div>
+
+</div>
+
+<div class="footer">
+Kibogora Polytechnic Innovation Club
+</div>
+
+</div>
+
+<script>
+
+function generateCertificate(){
+
+let name=document.getElementById("name").value;
+let position=document.getElementById("position").value;
+let membershipId=document.getElementById("membershipId").value;
+let batch=document.getElementById("batch").value;
+
+document.getElementById("certName").innerText=name;
+document.getElementById("certPosition").innerText=position;
+document.getElementById("certId").innerText=membershipId;
+document.getElementById("certBatch").innerText=batch;
+
+document.getElementById("certDate").innerText=
+new Date().toLocaleDateString();
+
+document.getElementById("certQR").innerHTML="";
+
+new QRCode(document.getElementById("certQR"),{
+text:
+"KP Innovation Club Certificate\n"+
+"Name: "+name+
+"\nPosition: "+position+
+"\nMembership ID: "+membershipId+
+"\nBatch: "+batch,
+width:120,
+height:120
+});
+
+}
+
+function downloadCertificate(){
+
+html2canvas(document.getElementById("certificate"),{
+scale:2
+}).then(canvas=>{
+
+let link=document.createElement("a");
+
+link.download="KPIC-Certificate.jpg";
+
+link.href=canvas.toDataURL("image/jpeg",1.0);
+
+link.click();
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

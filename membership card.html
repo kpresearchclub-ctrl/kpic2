@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KP Innovation Club Membership Card</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fb;
+padding:20px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.form{
+width:350px;
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.form h2{
+text-align:center;
+color:#0056b3;
+margin-bottom:15px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0056b3;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+margin-top:5px;
+}
+
+button:hover{
+background:#003d80;
+}
+
+/* CARD */
+
+.card{
+width:500px;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-header{
+background:#0056b3;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:12px;
+}
+
+.card-header img{
+width:60px;
+height:60px;
+border-radius:50%;
+background:white;
+padding:3px;
+}
+
+.card-header h3{
+font-size:18px;
+text-align:center;
+}
+
+.card-body{
+display:flex;
+padding:15px;
+gap:15px;
+align-items:center;
+}
+
+.member-photo{
+width:120px;
+height:140px;
+border:2px solid #0056b3;
+border-radius:10px;
+object-fit:cover;
+}
+
+.info{
+flex:1;
+font-size:14px;
+line-height:1.8;
+}
+
+.info strong{
+color:#0056b3;
+}
+
+.qr-box{
+width:100px;
+text-align:center;
+}
+
+.download{
+margin-top:10px;
+}
+
+.qr-box{
+width:120px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+#qrcode{
+width:100px;
+height:100px;
+padding:4px;
+background:white;
+border:1px solid #ddd;
+}
+
+.qr-label{
+font-size:11px;
+font-weight:bold;
+margin-top:5px;
+color:#0056b3;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="form">
+
+<h2>KP Innovation Club</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<select id="position">
+<option>Club President</option>
+<option>Vice President</option>
+<option>Director of Innovation</option>
+<option>Director of Research</option>
+<option>Director of Training and Capacity Building</option>
+<option>Director of Entrepreneurship</option>
+<option>Treasurer</option>
+<option>Director of Community Outreach</option>
+<option>Director of Media and Communication</option>
+<option>Secretary General</option>
+<option>Deputy Secretary</option>
+<option>Senior Advisor</option>
+<option>Academic Advisor</option>
+<option>Member</option>
+</select>
+
+<input type="text" id="membershipId" placeholder="Membership ID (KPIC-26-0016)">
+
+<input type="text" id="batch" placeholder="Batch Number">
+
+<input type="file" id="photo">
+
+<button onclick="generateCard()">Generate Membership Card</button>
+
+<button class="download" onclick="downloadCard()">
+📥 Download Card as JPG
+</button>
+
+</div>
+
+<div>
+
+<div class="card" id="card">
+
+<div class="card-header">
+
+<img src="new designend log update.jpg" alt="Club Logo">
+
+<h3>
+KIBOGORA POLYTECHNIC<br>
+INNOVATION CLUB
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<img id="previewPhoto"
+class="member-photo"
+src="https://via.placeholder.com/120x140">
+
+<div class="info">
+
+<p><strong>Name:</strong> <span id="cardName">---</span></p>
+
+<p><strong>Position:</strong> <span id="cardPosition">---</span></p>
+
+<p><strong>ID:</strong> <span id="cardId">---</span></p>
+
+</div>
+
+<div class="qr-box">
+    <div id="qrcode"></div>
+    <p class="qr-label">SCAN ME</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* PHOTO PREVIEW */
+
+document.getElementById("photo").addEventListener("change",function(e){
+
+let file=e.target.files[0];
+
+if(file){
+
+let reader=new FileReader();
+
+reader.onload=function(event){
+
+document.getElementById("previewPhoto").src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+/* GENERATE CARD */
+
+function generateCard(){
+
+let name=document.getElementById("name").value;
+let position=document.getElementById("position").value;
+let membershipId=document.getElementById("membershipId").value;
+let batch=document.getElementById("batch").value;
+
+document.getElementById("cardName").innerText=name;
+document.getElementById("cardPosition").innerText=position;
+document.getElementById("cardId").innerText=membershipId;
+document.getElementById("cardBatch").innerText=batch;
+
+/* QR RESET */
+
+document.getElementById("qrcode").innerHTML="";
+
+new QRCode(document.getElementById("qrcode"),{
+text:
+"Kibogora Polytechnic Innovation Club\n"+
+"Name: "+name+
+"\nPosition: "+position+
+"\nMembership ID: "+membershipId+
+"\nBatch Number: "+batch,
+width:90,
+height:90
+});
+
+}
+new QRCode(document.getElementById("qrcode"),{
+text:
+"Kibogora Polytechnic Innovation Club\n"+
+"Name: "+name+
+"\nPosition: "+position+
+"\nMembership ID: "+membershipId+
+"\nBatch Number: "+batch,
+width:100,
+height:100
+});
+
+/* DOWNLOAD AS JPG */
+
+function downloadCard(){
+
+setTimeout(()=>{
+
+html2canvas(document.getElementById("card"),{
+scale:2,
+useCORS:true
+}).then(canvas=>{
+
+let link=document.createElement("a");
+
+link.download="KPIC-Membership-Card.jpg";
+
+link.href=canvas.toDataURL("image/jpeg",1.0);
+
+link.click();
+
+});
+
+},300);
+
+}
+
+</script>
+
+</body>
+</html>
